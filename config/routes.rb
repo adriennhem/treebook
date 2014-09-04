@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
 
 
-  resources :statuses
+  resources :statuses, path: 'updates', path_names: { new: "create" } 
   get "feed", to: "statuses#index", as: :feed
+
+ 
 
   root "statuses#index"
 
